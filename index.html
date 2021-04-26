@@ -1,0 +1,78 @@
+<html>
+
+<head>
+	<script src="https://unpkg.com/aframe@latest">
+
+	</script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js">
+
+	</script>
+	<script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js">
+
+	</script>
+	<script src="https://unpkg.com/three@0.95.0/examples/js/libs/inflate.min.js">
+
+	</script>
+	<script src="a-puzzle.js">
+
+	</script>
+	<script>
+		if (location.protocol != "https:") {
+        location.href =
+          "https:" +
+          window.location.href.substring(window.location.protocol.length);
+      }
+	</script>
+</head>
+
+<body style="margin:0;">
+	<a-scene embedded arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_9_3;" puzzle>
+		<!-- PRELOAD -->
+		<a-assets>
+			<a-mixin id="flip" scale="1.2 1.2 1.2" rotation="0 -90 0"></a-mixin>
+			<a-asset-item id="a1" src="a1.glb"></a-asset-item>
+			<a-asset-item id="a2" src="a2.glb"></a-asset-item>
+			<a-asset-item id="a3" src="a3.glb"></a-asset-item>
+			<a-asset-item id="b1" src="b1.glb"></a-asset-item>
+			<a-asset-item id="b2" src="b2.glb"></a-asset-item>
+			<a-asset-item id="b3" src="b3.glb"></a-asset-item>
+			<a-asset-item id="c1" src="c1.glb"></a-asset-item>
+			<a-asset-item id="c2" src="c2.glb"></a-asset-item>
+			<a-asset-item id="c3" src="c3.glb"></a-asset-item>
+		</a-assets>
+		<a-entity light="type: ambient; color: #FFF; intensity: 1000"></a-entity>
+		<!-- FIRST ROW -->
+		<a-marker id="a1" type="barcode" value="0">
+			<a-entity mixin="flip" gltf-model="#a1"></a-entity>
+		</a-marker>
+		<a-marker id="a2" type="barcode" value="1">
+			<a-entity mixin="flip" gltf-model="#a2"></a-entity>
+		</a-marker>
+		<a-marker id="a3" type="barcode" value="2">
+			<a-entity mixin="flip" gltf-model="#a3"></a-entity>
+		</a-marker>
+		<!-- SECOND ROW -->
+		<a-marker id="b1" type="barcode" value="3">
+			<a-entity mixin="flip" gltf-model="#b1"></a-entity>
+		</a-marker>
+		<a-marker id="b2" type="barcode" value="4">
+			<a-entity mixin="flip" gltf-model="#b2"></a-entity>
+		</a-marker>
+		<a-marker id="b3" type="barcode" value="5">
+			<a-entity mixin="flip" gltf-model="#b3"></a-entity>
+		</a-marker>
+		<!-- THIRD ROW -->
+		<a-marker id="c1" type="barcode" value="6">
+			<a-entity mixin="flip" gltf-model="#c1"></a-entity>
+		</a-marker>
+		<a-marker id="c2" type="barcode" value="7">
+			<a-entity mixin="flip" gltf-model="#c2"></a-entity>
+		</a-marker>
+		<a-marker id="c3" type="barcode" value="8">
+			<a-entity mixin="flip" gltf-model="#c3"></a-entity>
+		</a-marker>
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+
+</html>
