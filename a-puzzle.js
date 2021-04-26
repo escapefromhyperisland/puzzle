@@ -81,7 +81,8 @@ AFRAME.registerComponent('puzzle', {
 				let answer = prompt(
 					'What has roots as nobody sees, Is taller than trees, Up, up it goes, And yet never grows?'
 				);
-				if (answer.toLowerCase() == 'mountain') {
+				answer = answer.toLowerCase();
+				if (answer.search('mountain') !== -1) {
 					// ah, what a personal defeat this must be… :)
 					location = 'https://bit.ly/3dWCDEZ'; // gave up that fast did you?
 				} else {
