@@ -83,7 +83,7 @@ AFRAME.registerComponent('puzzle', {
 				);
 				if (answer.toLowerCase() == 'mountain') {
 					// ah, what a personal defeat this must be… :)
-					location = window.location.href + 'https://bit.ly/3dWCDEZ'; // gave up that fast did you?
+					location = 'https://bit.ly/3dWCDEZ'; // gave up that fast did you?
 				} else {
 					location =
 						window.location.href +
