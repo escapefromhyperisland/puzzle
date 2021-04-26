@@ -86,7 +86,6 @@ AFRAME.registerComponent('puzzle', {
 					location = 'https://bit.ly/3dWCDEZ'; // gave up that fast did you?
 				} else {
 					location =
-						window.location.href +
 						'https://www.youtube.com/embed/cQ_b4_lw0Gg?controls=0&autoplay=1';
 				}
 			}, 1000);
